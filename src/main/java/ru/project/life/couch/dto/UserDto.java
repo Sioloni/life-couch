@@ -1,0 +1,20 @@
+package ru.project.life.couch.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserDto {
+    private Long id;
+    private String name;
+    private String phoneNumber;
+    private String email;
+    private String describeService;
+    private String productTitle;
+}
