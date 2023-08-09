@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.project.life.couch.dto.UserDto;
 import ru.project.life.couch.model.User;
-import ru.project.life.couch.repository.ProductRepository;
+import ru.project.life.couch.service.ProductService;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class UserMapper {
-    private final ProductRepository repository;
+    private final ProductService service;
 
 
     public User toEntity(UserDto dto) {
@@ -23,7 +23,7 @@ public class UserMapper {
                         dto.getPhoneNumber(),
                         dto.getEmail(),
                         dto.getDescribeService(),
-                        repository.findByTitle(dto.getProductTitle())
+                        service.findByTitle(dto.getProductTitle())
                 );
     }
 
@@ -35,7 +35,7 @@ public class UserMapper {
                         entity.getPhoneNumber(),
                         entity.getEmail(),
                         entity.getDescribeService(),
-                        entity.getProducts().getTitle()
+                        service.info(entity.getProducts())
                 );
     }
 

@@ -1,7 +1,9 @@
 package ru.project.life.couch.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import ru.project.life.couch.dto.ProductDto;
 import ru.project.life.couch.service.ProductService;
 

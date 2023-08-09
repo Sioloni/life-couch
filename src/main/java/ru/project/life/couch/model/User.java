@@ -32,6 +32,6 @@ public class User {
     private String describeService;
 
     @JoinColumn(name = "product_id")
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private Product products;
 }

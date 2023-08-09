@@ -13,6 +13,7 @@ import lombok.Setter;
 public class ProductDto {
     private Long id;
     private String title;
-    private String describe;
+    private String description;
     private Double price;
+    private byte[] photo;
 }
